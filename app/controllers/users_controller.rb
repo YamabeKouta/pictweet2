@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def show
-    @tweets = current_user.tweets
-    @nickname = current_user.nickname
+    user = User.find(params[:id])
+    @tweets = user.tweets
+    @nickname = user.nickname
   end
 end
